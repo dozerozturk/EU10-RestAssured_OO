@@ -25,8 +25,5 @@ public abstract class SpartanTestBase {
         //DBUtils.destroy();
     }
 
-
-
-
 }
 // 54.172.237.131
