@@ -1,0 +1,31 @@
+Class Notes-2
+we added new student using post method bookit api, we want to delete it .
+
+we need id of new student to delete as a teacher 
+
+how to get id ? 
+
+one way could be 
+1.login api using new student email and password
+2.send get request to /api/users/me endpoint with newstudent token
+3.get the id of the student
+4.use that id for delete student as a teacher
+
+ 
+
+HOMEWORK
+
+// try to get name,role,batch number, campus, team name from api for one student
+it will be multiple api request
+//responses returns batch name team name with students information
+//first make sure your student is inside the respones then get those info
+
+prepare one list of information about student and compare with ui 
+
+//UI vs API 
+
+
+//verify same information vs 
+//connect db and get the same information which requires joins multiple tables 
+ 
+
