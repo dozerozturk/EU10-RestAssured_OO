@@ -1,4 +1,4 @@
-Response Validations
+ Response Validations
 
     so far, we send all request and stored responses into Response object, then did validations(status code,header,body)
     we can also do all of those actions in single statement by Hamcrest Mathers.
@@ -46,7 +46,9 @@ Map<String,Object> jsonDataMap = response.body().as(Map.class);
 
 Deserializaiton ==> JSON To JAVA 
 
-    Jackson or Gson ==> those are libraries to deserialization and serialization. they are also known as objectMapper,jsonparser, databinding libraries.we added jackson (Databind) library to our pom.xml to deserialize 
+    Jackson or Gson ==> those are libraries to deserialization and serialization.
+    they are also known as objectMapper,jsonparser, databinding libraries.
+    we added jackson (Databind) library to our pom.xml to deserialize
 
 
 
