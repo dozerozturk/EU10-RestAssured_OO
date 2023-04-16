@@ -44,7 +44,7 @@ Response body --> Java collection
 
 Map<String,Object> jsonDataMap = response.body().as(Map.class);
 
-Deserializaiton ==> JSON To JAVA 
+Deserialization ==> JSON To JAVA
 
     Jackson or Gson ==> those are libraries to deserialization and serialization. they are also known as objectMapper,jsonparser, databinding libraries.we added jackson (Databind) library to our pom.xml to deserialize 
 
@@ -72,13 +72,15 @@ public class School{
 
 School school1 = response.as(School.class);
 
-So we have converted our json response to pojo class which is our custom class that we created for Spartan. this is also called deserialization because we convert JSON to JAVA aan the end.
+So we have converted our json response to pojo class which is our custom class that we created for Spartan.
+this is also called deserialization because we convert JSON to JAVA aan the end.
 we have learnt 2 different way to get this convertion 
 
 1.response.as(Classname.class) method where we give the custom class as a convertion type
        
         Spartan spartan15 = response.as(Spartan.class);
-this method will work if we have Jackson(Databind) or Gson libraries in our pom.xml because they are the one who does deserialization. when we look definition of the as() method it says if you add one of those, I will do converstion for you. 
+this method will work if we have Jackson(Databind) or Gson libraries in our pom.xml because they are the one who does
+deserialization. when we look definition of the as() method it says if you add one of those, I will do converstion for you.
 
 second way is using JsonPath object getter like getObject.
 
@@ -96,13 +98,15 @@ content is keeping multiple spartan json objects.
 
 so the question is how can we save first spartan jsonObject inside the content array ? 
 
-to get this one in one shot, we need to point first element of content and also do deserialization to Spartan class. so what we used is jsonPath.getObject method where we have option to provide path and classType at the same time. 
+to get this one in one shot, we need to point first element of content and also do deserialization to Spartan class.
+so what we used is jsonPath.getObject method where we have option to provide path and classType at the same time.
 
  //get the first spartan from content list and put inside spartan object
         Spartan s1 = jsonPath.getObject("content[0]", Spartan.class);
 
 as you see above, we pointed the first element and we tell we want to convert it to  spartan class.
-response.as() method does NOT have option to use path and class time at the same time, that is the reasoin JsonPath sometimes could be more useful. 
+response.as() method does NOT have option to use path and class time at the same time, that is the reasoin JsonPath
+sometimes could be more useful.
 
 Jackson annotations
 @JsonProperty("region_id")
@@ -118,7 +122,8 @@ Jackson annotations
     @JsonProperty("region_id")
     private int rId;
 
-Scenario: you have json which has many keys and values, but you just need only 4 value to do verification, how can you only get 4 values as a POJO class and ignore the rest ? 
+Scenario: you have json which has many keys and values, but you just need only 4 value to do verification, how can you
+only get 4 values as a POJO class and ignore the rest ?
 
 When we create a pojo with only 4 values and try to do deserialize we got following exception
 
@@ -130,7 +135,8 @@ ignore all the jsonKeys that we dont have corresponding value in our pojo class 
 Solution:
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-we put this annotations which comes from jackson library on top of the pojo class we want to ignore fields. default value for ignoreUnknown is false so make sure you set it to true.
+we put this annotations which comes from jackson library on top of the pojo class we want to ignore fields. default
+value for ignoreUnknown is false so make sure you set it to true.
 
 
 HTTP REQUEST TYPES
@@ -192,7 +198,9 @@ PART OF POST RESPONSE
 PUT VS PATCH
 they both update the result basically existing information
 the only difference between them is while we updateing even one value from json
-we need to provide rest of the fields with PUT request. but when we use PATH request we do NOT need to provide the fields that we will NOT update it. basically we can only put fields that we want to change and send patch request. for spartan both of them is returning 204 which means succesfull and no body in return.
+we need to provide rest of the fields with PUT request. but when we use PATH request we do NOT need to provide the
+fields that we will NOT update it. basically we can only put fields that we want to change and send patch request.
+for spartan both of them is returning 204 which means succesfull and no body in return.
 
 
 DELETE 
