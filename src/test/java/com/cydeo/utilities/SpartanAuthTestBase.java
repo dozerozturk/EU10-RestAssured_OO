@@ -8,7 +8,8 @@ public abstract class SpartanAuthTestBase {
     @BeforeAll
     public static void init(){
         //save baseurl inside this variable so that we dont need to type each http method.
-        baseURI = "http://3.216.30.92:7000";
+        baseURI = "http://54.172.237.131:7000";
 
     }
 }
+///http://54.172.237.131/
