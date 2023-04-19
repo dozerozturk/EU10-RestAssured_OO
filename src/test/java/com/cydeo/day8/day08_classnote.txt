@@ -23,6 +23,8 @@ BOOKIT
 
 https://cybertek-reservation-api-qa.herokuapp.com/sign?email=sbirdbj@fc2.com&password=asenorval
 
+https://cybertek-reservation-api-qa.herokuapp.com/api/campuses
+L bearer token
 token
 eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMzkiLCJhdWQiOiJzdHVkZW50LXRlYW0tbGVhZGVyIn0._vM1-eRoS7SsHu6T-QPdJoEdA8LSwnxUvvTTbhV-8ms
 
@@ -44,7 +46,7 @@ HOW TO SEND Basic Auth(Spartan) or Bearer(Bookit) token with Restassured Library
 
 
 CRUD operations  
-Create            Post
+Create          Post
 Read            Get
 Update          Put/Patch
 Delete          Delete
