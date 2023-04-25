@@ -33,8 +33,6 @@ in postman we can add as bearer token and use it
 
 postman is creating the request headerheader and adding the token as following;
 
-
-
 Authorization: Bearer your-token
 
 you can see your token by clicking hidden headers.
@@ -43,8 +41,6 @@ you can see your token by clicking hidden headers.
 RBAC -- Role based access control 
 
 HOW TO SEND Basic Auth(Spartan) or Bearer(Bookit) token with Restassured Library ? 
-
- 
 
 
 CRUD operations  
